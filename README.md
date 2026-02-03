@@ -16,6 +16,13 @@ and Microsoft SC-300 objectives.
 - Onboarding: Create users from CSV, populate attributes, add to groups, optionally issue Temporary Access Pass (TAP).
 - Offboarding: Disable users, revoke sessions, remove group memberships, export audit-friendly reports.
 
+## Prerequisites
+
+- PowerShell 7+ installed
+- Microsoft Graph PowerShell SDK installed
+- An Entra tenant with permissions to create/manage users and groups
+- Appropriate Graph API permissions granted during login
+
 ## Security / design highlights
 - Dry-run mode to validate changes before execution
 - Idempotent behavior (safe to re-run; skips existing users)
@@ -27,10 +34,31 @@ and Microsoft SC-300 objectives.
 - offboarding/ -> offboarding automation + sample CSV
 - docs/        -> sanitized example outputs/screenshots
 
-## Quick start
-See:
-- onboarding/README.md
-- offboarding/README.md
+### Quick start (example)
+
+Open a PowerShell terminal and run:
+
+```powershell
+# 1) Install Microsoft Graph module (if not present)
+Install-Module Microsoft.Graph -Scope CurrentUser
+
+# 2) Connect to Microsoft Graph with required scopes
+Connect-MgGraph -Scopes `
+  "User.ReadWrite.All",
+  "Group.ReadWrite.All",
+  "GroupMember.ReadWrite.All",
+  "Directory.ReadWrite.All",
+  "UserAuthenticationMethod.ReadWrite.All"
+
+Select-MgProfile -Name "v1.0"
+
+# 3) Test a dry run of onboarding
+cd onboarding
+.\New-SecureUser.ps1 -CsvPath .\new_users.sample.csv -TargetGroups "LIC-BASELINE-USERS","GRP-SECURITY-NEW-HIRES" -DryRun
+
+# 4) Test a dry run of offboarding
+cd ../offboarding
+.\Offboard-User.ps1 -CsvPath .\offboard_users.sample.csv -DryRun
 
 ## Evidence (sanitized)
 

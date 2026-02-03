@@ -1,0 +1,17 @@
+PS /xxxxxx/xxxxxx/xxx/iam-projects/entra-lifecycle-toolkit/offboarding> .\Offboard-User.ps1 `                            
+>>   -CsvPath .\offboard_users.sample.csv `
+>>   -DryRun
+[2026-02-03 15:23:26] Connected as admin1@yourtenant.onmicrosoft.com to tenant xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
+[2026-02-03 15:23:26] DryRun = True | ProtectAdmins = True
+[2026-02-03 15:23:26] CSV = .\offboard_users.sample.csv
+[2026-02-03 15:23:26] Processing offboard: clark.kent@yourtenant.onmicrosoft.com | Action=DisableAndRevoke | RemoveAllGroups=False | Reason=End of contract
+[2026-02-03 15:23:27] ERROR: User not found: clark.kent@yourtenant.onmicrosoft.com
+[2026-02-03 15:23:27] Report written to: .\offboarding-report.csv
+
+==================== OFFBOARDING SUMMARY ====================
+
+UserPrincipalName                     Status Notes
+-----------------                     ------ -----
+clark.kent@yourtenant.onmicrosoft.com ERROR  User not found
+
+=============================================================

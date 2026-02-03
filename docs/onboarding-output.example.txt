@@ -1,0 +1,24 @@
+>>   -CsvPath .\new_users.sample.csv `
+>>   -TargetGroups "LIC-BASELINE-USERS","GRP-SECURITY-NEW-HIRES" `
+>>   -DryRun
+[2026-02-03 15:12:04] Connected as admin1@yourtenant.onmicrosoft.com to tenant xxxxxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx
+[2026-02-03 15:12:04] DryRun = True
+[2026-02-03 15:12:04] CSV = .\new_users.sample.csv
+[2026-02-03 15:12:04] Groups = LIC-BASELINE-USERS, GRP-SECURITY-NEW-HIRES
+[2026-02-03 15:12:04] NoTap = False | TapLifetimeMinutes = 60 | TapUsableOnce = False
+[2026-02-03 15:12:05] Resolved groups: LIC-BASELINE-USERS, GRP-SECURITY-NEW-HIRES
+[2026-02-03 15:12:05] Processing user: taylor.reed@yourtenant.onmicrosoft.com
+[2026-02-03 15:12:06] DRYRUN: Would create user and add to groups.
+[2026-02-03 15:12:06] Processing user: clark.kent@yourtenant.onmicrosoft.com
+[2026-02-03 15:12:06] DRYRUN: Would create user and add to groups.
+
+[2026-02-03 15:12:06] Report written to: .\onboarding-report.csv
+
+==================== ONBOARDING SUMMARY ====================
+
+UserPrincipalName                      Status Notes
+-----------------                      ------ -----
+clark.kent@yourtenant.onmicrosoft.com  DRYRUN Would create + group (+TAP if en…
+taylor.reed@yourtenant.onmicrosoft.com DRYRUN Would create + group (+TAP if en…
+
+============================================================

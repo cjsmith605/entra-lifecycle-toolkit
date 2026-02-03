@@ -1,0 +1,13 @@
+# OS / Editor
+.DS_Store
+.vscode/
+
+# Outputs (never commit)
+*.log
+onboarding-log.txt
+offboarding-log.txt
+onboarding-report.csv
+offboarding-report.csv
+
+# Any real run artifacts
+*output*.txt

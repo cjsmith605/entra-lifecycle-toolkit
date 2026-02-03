@@ -1,0 +1,2 @@
+UserPrincipalName,Action,RemoveAllGroups,RemoveGroups,Reason
+clark.kent@yourtenant.onmicrosoft.com,DisableAndRevoke,false,"LIC-BASELINE-USERS;GRP-SECURITY-NEW-HIRES","End of contract"
